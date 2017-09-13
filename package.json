@@ -17,7 +17,7 @@
     "lodash"
   ],
   "license": "ISC",
-  "main": "lib/lodash.js",
+  "main": "./lib/lodash.js",
   "peerDependencies": {
     "lodash": "^4.0.0"
   },
