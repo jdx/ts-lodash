@@ -1,7 +1,7 @@
 {
   "name": "ts-lodash",
   "description": "lazy-loading lodash for typescript",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Jeff Dickey",
   "devDependencies": {
     "@types/lodash": "^4.14.74",
