@@ -19,7 +19,7 @@
   "license": "ISC",
   "main": "lodash.js",
   "peerDependencies": {
-    "lodash": "^4.17.4"
+    "lodash": "^4.0.0"
   },
   "repository": "jdxcode/ts-lodash",
   "scripts": {
