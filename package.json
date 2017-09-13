@@ -3,11 +3,13 @@
   "description": "lazy-loading lodash for typescript",
   "version": "4.0.4",
   "author": "Jeff Dickey",
+  "dependencies": {
+    "lodash": "^4.17.4"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.74",
     "@types/node": "^8.0.28",
     "del-cli": "^1.1.0",
-    "lodash": "^4.17.4",
     "typescript": "^2.5.2"
   },
   "files": [
@@ -18,9 +20,6 @@
   ],
   "license": "ISC",
   "main": "./lib/lodash.js",
-  "peerDependencies": {
-    "lodash": "^4.0.0"
-  },
   "repository": "jdxcode/ts-lodash",
   "scripts": {
     "prepare": "del lib && tsc"
