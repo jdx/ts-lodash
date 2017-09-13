@@ -17,6 +17,7 @@ export default {
   get sortBy(): typeof lodash.sortBy { return fetch('lodash/sortBy') },
   get sortedUniqBy(): typeof lodash.sortedUniqBy { return fetch('lodash/sortedUniqBy') },
   get uniq(): typeof lodash.uniq { return fetch('lodash/uniq') },
+  get uniqBy(): typeof lodash.uniqBy { return fetch('lodash/uniqBy') },
   get zipObject(): typeof lodash.zipObject { return fetch('lodash/zipObject') },
 }
 
