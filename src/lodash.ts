@@ -10,6 +10,7 @@ export default {
   get padEnd(): typeof lodash.padEnd { return fetch('lodash/padEnd') },
   get partial(): typeof lodash.partial { return fetch('lodash/partial') },
   get pick(): typeof lodash.pick { return fetch('lodash/pick') },
+  get pickBy(): typeof lodash.pickBy { return fetch('lodash/pickBy') },
   get property(): typeof lodash.property { return fetch('lodash/property') },
   get result(): typeof lodash.result { return fetch('lodash/result') },
   get set(): typeof lodash.set { return fetch('lodash/set') },
