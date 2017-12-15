@@ -3,6 +3,7 @@ import lodash = require('lodash')
 export default {
   get ary(): typeof lodash.ary { return fetch('lodash/ary') },
   get compact(): typeof lodash.compact { return fetch('lodash/compact') },
+  get flatMap(): typeof lodash.ary { return fetch('lodash/flatMap') },
   get get(): typeof lodash.get { return fetch('lodash/get') },
   get identity(): typeof lodash.identity { return fetch('lodash/identity') },
   get mapValues(): typeof lodash.mapValues { return fetch('lodash/mapValues') },
