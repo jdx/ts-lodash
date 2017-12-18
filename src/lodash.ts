@@ -6,6 +6,7 @@ export default {
   get flatMap(): typeof lodash.ary { return fetch('lodash/flatMap') },
   get get(): typeof lodash.get { return fetch('lodash/get') },
   get identity(): typeof lodash.identity { return fetch('lodash/identity') },
+  get isEqual(): typeof lodash.isEqual { return fetch('lodash/isEqual') },
   get mapValues(): typeof lodash.mapValues { return fetch('lodash/mapValues') },
   get maxBy(): typeof lodash.maxBy { return fetch('lodash/maxBy') },
   get padEnd(): typeof lodash.padEnd { return fetch('lodash/padEnd') },
