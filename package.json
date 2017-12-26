@@ -23,7 +23,8 @@
   "main": "./lib/lodash.js",
   "repository": "jdxcode/ts-lodash",
   "scripts": {
-    "prepare": "del lib && tsc"
+    "precommit": "cli-engine-util",
+    "prepare": "cli-engine-util"
   },
   "types": "./lib/lodash.d.ts"
 }
