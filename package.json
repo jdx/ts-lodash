@@ -7,10 +7,9 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
+    "@cli-engine/util": "^1.0.8",
     "@types/lodash": "^4.14.91",
     "@types/node": "^8.5.2",
-    "del-cli": "^1.1.0",
-    "husky": "^0.14.3",
     "typescript": "^2.6.2"
   },
   "files": [
@@ -23,7 +22,6 @@
   "main": "./lib/lodash.js",
   "repository": "jdxcode/ts-lodash",
   "scripts": {
-    "precommit": "cli-engine-util",
     "prepare": "cli-engine-util"
   },
   "types": "./lib/lodash.d.ts"
