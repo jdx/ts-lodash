@@ -2,7 +2,6 @@ import lodash = require('lodash')
 
 export default {
   get ary(): typeof lodash.ary { return fetch('lodash/ary') },
-  get throttle(): typeof lodash.throttle { return fetch('lodash/throttle') },
   get compact(): typeof lodash.compact { return fetch('lodash/compact') },
   get flatMap(): typeof lodash.ary { return fetch('lodash/flatMap') },
   get get(): typeof lodash.get { return fetch('lodash/get') },
@@ -19,6 +18,7 @@ export default {
   get set(): typeof lodash.set { return fetch('lodash/set') },
   get sortBy(): typeof lodash.sortBy { return fetch('lodash/sortBy') },
   get sortedUniqBy(): typeof lodash.sortedUniqBy { return fetch('lodash/sortedUniqBy') },
+  get throttle(): typeof lodash.throttle { return fetch('lodash/throttle') },
   get uniq(): typeof lodash.uniq { return fetch('lodash/uniq') },
   get uniqBy(): typeof lodash.uniqBy { return fetch('lodash/uniqBy') },
   get zipObject(): typeof lodash.zipObject { return fetch('lodash/zipObject') },
