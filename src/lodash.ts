@@ -15,6 +15,7 @@ export default {
   get pickBy(): typeof lodash.pickBy { return fetch('lodash/pickBy') },
   get property(): typeof lodash.property { return fetch('lodash/property') },
   get result(): typeof lodash.result { return fetch('lodash/result') },
+  get sample(): typeof lodash.sample { return fetch('lodash/sample') },
   get set(): typeof lodash.set { return fetch('lodash/set') },
   get sortBy(): typeof lodash.sortBy { return fetch('lodash/sortBy') },
   get sortedUniqBy(): typeof lodash.sortedUniqBy { return fetch('lodash/sortedUniqBy') },
