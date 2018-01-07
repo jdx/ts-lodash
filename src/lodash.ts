@@ -2,6 +2,7 @@ import lodash = require('lodash')
 
 export default {
   get ary(): typeof lodash.ary { return fetch('lodash/ary') },
+  get castArray(): typeof lodash.castArray { return fetch('lodash/castArray') },
   get compact(): typeof lodash.compact { return fetch('lodash/compact') },
   get flatMap(): typeof lodash.flatMap { return fetch('lodash/flatMap') },
   get get(): typeof lodash.get { return fetch('lodash/get') },
