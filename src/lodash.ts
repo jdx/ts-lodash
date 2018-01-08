@@ -12,6 +12,7 @@ export default {
   get maxBy(): typeof lodash.maxBy { return fetch('lodash/maxBy') },
   get padEnd(): typeof lodash.padEnd { return fetch('lodash/padEnd') },
   get partial(): typeof lodash.partial { return fetch('lodash/partial') },
+  get partialRight(): typeof lodash.partialRight { return fetch('lodash/partialRight') },
   get pick(): typeof lodash.pick { return fetch('lodash/pick') },
   get pickBy(): typeof lodash.pickBy { return fetch('lodash/pickBy') },
   get property(): typeof lodash.property { return fetch('lodash/property') },
