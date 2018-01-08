@@ -1,37 +1,261 @@
 import lodash = require('lodash')
 
-export default {
-  get ary(): typeof lodash.ary { return fetch('lodash/ary') },
-  get castArray(): typeof lodash.castArray { return fetch('lodash/castArray') },
-  get compact(): typeof lodash.compact { return fetch('lodash/compact') },
-  get flatMap(): typeof lodash.flatMap { return fetch('lodash/flatMap') },
-  get get(): typeof lodash.get { return fetch('lodash/get') },
-  get identity(): typeof lodash.identity { return fetch('lodash/identity') },
-  get isEqual(): typeof lodash.isEqual { return fetch('lodash/isEqual') },
-  get mapValues(): typeof lodash.mapValues { return fetch('lodash/mapValues') },
-  get maxBy(): typeof lodash.maxBy { return fetch('lodash/maxBy') },
-  get padEnd(): typeof lodash.padEnd { return fetch('lodash/padEnd') },
-  get partial(): typeof lodash.partial { return fetch('lodash/partial') },
-  get partialRight(): typeof lodash.partialRight { return fetch('lodash/partialRight') },
-  get pick(): typeof lodash.pick { return fetch('lodash/pick') },
-  get pickBy(): typeof lodash.pickBy { return fetch('lodash/pickBy') },
-  get property(): typeof lodash.property { return fetch('lodash/property') },
-  get result(): typeof lodash.result { return fetch('lodash/result') },
-  get sample(): typeof lodash.sample { return fetch('lodash/sample') },
-  get set(): typeof lodash.set { return fetch('lodash/set') },
-  get sortBy(): typeof lodash.sortBy { return fetch('lodash/sortBy') },
-  get sortedUniqBy(): typeof lodash.sortedUniqBy { return fetch('lodash/sortedUniqBy') },
-  get throttle(): typeof lodash.throttle { return fetch('lodash/throttle') },
-  get uniq(): typeof lodash.uniq { return fetch('lodash/uniq') },
-  get uniqBy(): typeof lodash.uniqBy { return fetch('lodash/uniqBy') },
-  get zipObject(): typeof lodash.zipObject { return fetch('lodash/zipObject') },
-}
-
-const cache: any = {}
-
-function fetch(s: string) {
-  if (!cache[s]) {
-    cache[s] = require(s)
+export default new Proxy({} as any, {
+  get (cache, name) {
+    if (typeof name !== 'string') return cache[name]
+    return cache[name] || (cache[name] = require(`lodash/${name}`))
   }
-  return cache[s]
+}) as {
+  readonly add: typeof lodash.add
+  readonly after: typeof lodash.after
+  readonly ary: typeof lodash.ary
+  readonly assignWith: typeof lodash.assignWith
+  readonly at: typeof lodash.at
+  readonly attempt: typeof lodash.attempt
+  readonly before: typeof lodash.before
+  readonly bindKey: typeof lodash.bindKey
+  readonly camelCase: typeof lodash.camelCase
+  readonly capitalize: typeof lodash.capitalize
+  readonly castArray: typeof lodash.castArray
+  readonly ceil: typeof lodash.ceil
+  readonly chunk: typeof lodash.chunk
+  readonly clamp: typeof lodash.clamp
+  readonly clone: typeof lodash.clone
+  readonly cloneDeep: typeof lodash.cloneDeep
+  readonly cloneDeepWith: typeof lodash.cloneDeepWith
+  readonly cloneWith: typeof lodash.cloneWith
+  readonly compact: typeof lodash.compact
+  readonly cond: typeof lodash.cond
+  readonly conforms: typeof lodash.conforms
+  readonly conformsTo: typeof lodash.conformsTo
+  readonly countBy: typeof lodash.countBy
+  readonly create: typeof lodash.create
+  readonly curry: typeof lodash.curry
+  readonly curryRight: typeof lodash.curryRight
+  readonly debounce: typeof lodash.debounce
+  readonly deburr: typeof lodash.deburr
+  readonly defaultTo: typeof lodash.defaultTo
+  readonly defaults: typeof lodash.defaults
+  readonly defaultsDeep: typeof lodash.defaultsDeep
+  readonly defer: typeof lodash.defer
+  readonly delay: typeof lodash.delay
+  readonly difference: typeof lodash.difference
+  readonly differenceBy: typeof lodash.differenceBy
+  readonly differenceWith: typeof lodash.differenceWith
+  readonly divide: typeof lodash.divide
+  readonly drop: typeof lodash.drop
+  readonly dropRight: typeof lodash.dropRight
+  readonly dropRightWhile: typeof lodash.dropRightWhile
+  readonly dropWhile: typeof lodash.dropWhile
+  readonly each: typeof lodash.each
+  readonly eachRight: typeof lodash.eachRight
+  readonly endsWith: typeof lodash.endsWith
+  readonly eq: typeof lodash.eq
+  readonly escape: typeof lodash.escape
+  readonly escapeRegExp: typeof lodash.escapeRegExp
+  readonly every: typeof lodash.every
+  readonly filter: typeof lodash.filter
+  readonly find: typeof lodash.find
+  readonly findKey: typeof lodash.findKey
+  readonly findLast: typeof lodash.findLast
+  readonly findLastIndex: typeof lodash.findLastIndex
+  readonly findLastKey: typeof lodash.findLastKey
+  readonly first: typeof lodash.first
+  readonly flatMap: typeof lodash.flatMap
+  readonly flatMapDeep: typeof lodash.flatMapDeep
+  readonly flatMapDepth: typeof lodash.flatMapDepth
+  readonly flatten: typeof lodash.flatten
+  readonly flattenDeep: typeof lodash.flattenDeep
+  readonly flattenDepth: typeof lodash.flattenDepth
+  readonly flip: typeof lodash.flip
+  readonly floor: typeof lodash.floor
+  readonly flow: typeof lodash.flow
+  readonly flowRight: typeof lodash.flowRight
+  readonly forEach: typeof lodash.forEach
+  readonly forEachRight: typeof lodash.forEachRight
+  readonly forOwn: typeof lodash.forOwn
+  readonly forOwnRight: typeof lodash.forOwnRight
+  readonly fromPairs: typeof lodash.fromPairs
+  readonly functions: typeof lodash.functions
+  readonly get: typeof lodash.get
+  readonly groupBy: typeof lodash.groupBy
+  readonly gt: typeof lodash.gt
+  readonly gte: typeof lodash.gte
+  readonly has: typeof lodash.has
+  readonly hasIn: typeof lodash.hasIn
+  readonly head: typeof lodash.head
+  readonly identity: typeof lodash.identity
+  readonly inRange: typeof lodash.inRange
+  readonly indexOf: typeof lodash.indexOf
+  readonly initial: typeof lodash.initial
+  readonly intersection: typeof lodash.intersection
+  readonly intersectionBy: typeof lodash.intersectionBy
+  readonly intersectionWith: typeof lodash.intersectionWith
+  readonly invert: typeof lodash.invert
+  readonly invertBy: typeof lodash.invertBy
+  readonly invoke: typeof lodash.invoke
+  readonly invokeMap: typeof lodash.invokeMap
+  readonly isArguments: typeof lodash.isArguments
+  readonly isArrayBuffer: typeof lodash.isArrayBuffer
+  readonly isArrayLike: typeof lodash.isArrayLike
+  readonly isArrayLikeObject: typeof lodash.isArrayLikeObject
+  readonly isBoolean: typeof lodash.isBoolean
+  readonly isBuffer: typeof lodash.isBuffer
+  readonly isDate: typeof lodash.isDate
+  readonly isElement: typeof lodash.isElement
+  readonly isEmpty: typeof lodash.isEmpty
+  readonly isEqual: typeof lodash.isEqual
+  readonly isEqualWith: typeof lodash.isEqualWith
+  readonly isError: typeof lodash.isError
+  readonly isFunction: typeof lodash.isFunction
+  readonly isLength: typeof lodash.isLength
+  readonly isMap: typeof lodash.isMap
+  readonly isMatch: typeof lodash.isMatch
+  readonly isMatchWith: typeof lodash.isMatchWith
+  readonly isNative: typeof lodash.isNative
+  readonly isNil: typeof lodash.isNil
+  readonly isNull: typeof lodash.isNull
+  readonly isNumber: typeof lodash.isNumber
+  readonly isObject: typeof lodash.isObject
+  readonly isObjectLike: typeof lodash.isObjectLike
+  readonly isPlainObject: typeof lodash.isPlainObject
+  readonly isRegExp: typeof lodash.isRegExp
+  readonly isSet: typeof lodash.isSet
+  readonly isString: typeof lodash.isString
+  readonly isSymbol: typeof lodash.isSymbol
+  readonly isTypedArray: typeof lodash.isTypedArray
+  readonly isUndefined: typeof lodash.isUndefined
+  readonly isWeakMap: typeof lodash.isWeakMap
+  readonly isWeakSet: typeof lodash.isWeakSet
+  readonly kebabCase: typeof lodash.kebabCase
+  readonly keyBy: typeof lodash.keyBy
+  readonly keys: typeof lodash.keys
+  readonly last: typeof lodash.last
+  readonly lastIndexOf: typeof lodash.lastIndexOf
+  readonly lowerCase: typeof lodash.lowerCase
+  readonly lowerFirst: typeof lodash.lowerFirst
+  readonly lt: typeof lodash.lt
+  readonly lte: typeof lodash.lte
+  readonly map: typeof lodash.map
+  readonly mapValues: typeof lodash.mapValues
+  readonly matches: typeof lodash.matches
+  readonly matchesProperty: typeof lodash.matchesProperty
+  readonly maxBy: typeof lodash.maxBy
+  readonly mean: typeof lodash.mean
+  readonly meanBy: typeof lodash.meanBy
+  readonly memoize: typeof lodash.memoize
+  readonly merge: typeof lodash.merge
+  readonly mergeWith: typeof lodash.mergeWith
+  readonly method: typeof lodash.method
+  readonly methodOf: typeof lodash.methodOf
+  readonly minBy: typeof lodash.minBy
+  readonly multiply: typeof lodash.multiply
+  readonly negate: typeof lodash.negate
+  readonly nth: typeof lodash.nth
+  readonly nthArg: typeof lodash.nthArg
+  readonly once: typeof lodash.once
+  readonly orderBy: typeof lodash.orderBy
+  readonly over: typeof lodash.over
+  readonly overArgs: typeof lodash.overArgs
+  readonly overEvery: typeof lodash.overEvery
+  readonly overSome: typeof lodash.overSome
+  readonly pad: typeof lodash.pad
+  readonly padEnd: typeof lodash.padEnd
+  readonly padStart: typeof lodash.padStart
+  readonly parseInt: typeof lodash.parseInt
+  readonly partial: typeof lodash.partial
+  readonly partialRight: typeof lodash.partialRight
+  readonly partition: typeof lodash.partition
+  readonly pick: typeof lodash.pick
+  readonly pickBy: typeof lodash.pickBy
+  readonly property: typeof lodash.property
+  readonly propertyOf: typeof lodash.propertyOf
+  readonly pull: typeof lodash.pull
+  readonly pullAll: typeof lodash.pullAll
+  readonly pullAllBy: typeof lodash.pullAllBy
+  readonly pullAllWith: typeof lodash.pullAllWith
+  readonly pullAt: typeof lodash.pullAt
+  readonly random: typeof lodash.random
+  readonly range: typeof lodash.range
+  readonly rangeRight: typeof lodash.rangeRight
+  readonly reduce: typeof lodash.reduce
+  readonly reduceRight: typeof lodash.reduceRight
+  readonly reject: typeof lodash.reject
+  readonly remove: typeof lodash.remove
+  readonly repeat: typeof lodash.repeat
+  readonly replace: typeof lodash.replace
+  readonly result: typeof lodash.result
+  readonly round: typeof lodash.round
+  readonly sample: typeof lodash.sample
+  readonly sampleSize: typeof lodash.sampleSize
+  readonly set: typeof lodash.set
+  readonly setWith: typeof lodash.setWith
+  readonly shuffle: typeof lodash.shuffle
+  readonly size: typeof lodash.size
+  readonly slice: typeof lodash.slice
+  readonly snakeCase: typeof lodash.snakeCase
+  readonly some: typeof lodash.some
+  readonly sortBy: typeof lodash.sortBy
+  readonly sortedIndex: typeof lodash.sortedIndex
+  readonly sortedIndexBy: typeof lodash.sortedIndexBy
+  readonly sortedIndexOf: typeof lodash.sortedIndexOf
+  readonly sortedLastIndex: typeof lodash.sortedLastIndex
+  readonly sortedLastIndexBy: typeof lodash.sortedLastIndexBy
+  readonly sortedLastIndexOf: typeof lodash.sortedLastIndexOf
+  readonly sortedUniq: typeof lodash.sortedUniq
+  readonly sortedUniqBy: typeof lodash.sortedUniqBy
+  readonly split: typeof lodash.split
+  readonly startCase: typeof lodash.startCase
+  readonly startsWith: typeof lodash.startsWith
+  readonly subtract: typeof lodash.subtract
+  readonly sum: typeof lodash.sum
+  readonly sumBy: typeof lodash.sumBy
+  readonly tail: typeof lodash.tail
+  readonly take: typeof lodash.take
+  readonly takeRight: typeof lodash.takeRight
+  readonly takeRightWhile: typeof lodash.takeRightWhile
+  readonly takeWhile: typeof lodash.takeWhile
+  readonly template: typeof lodash.template
+  readonly templateSettings: typeof lodash.templateSettings
+  readonly throttle: typeof lodash.throttle
+  readonly times: typeof lodash.times
+  readonly toArray: typeof lodash.toArray
+  readonly toFinite: typeof lodash.toFinite
+  readonly toInteger: typeof lodash.toInteger
+  readonly toLength: typeof lodash.toLength
+  readonly toNumber: typeof lodash.toNumber
+  readonly toPath: typeof lodash.toPath
+  readonly toPlainObject: typeof lodash.toPlainObject
+  readonly toSafeInteger: typeof lodash.toSafeInteger
+  readonly toString: typeof lodash.toString
+  readonly transform: typeof lodash.transform
+  readonly trim: typeof lodash.trim
+  readonly trimEnd: typeof lodash.trimEnd
+  readonly trimStart: typeof lodash.trimStart
+  readonly truncate: typeof lodash.truncate
+  readonly unescape: typeof lodash.unescape
+  readonly union: typeof lodash.union
+  readonly unionBy: typeof lodash.unionBy
+  readonly unionWith: typeof lodash.unionWith
+  readonly uniq: typeof lodash.uniq
+  readonly uniqBy: typeof lodash.uniqBy
+  readonly uniqWith: typeof lodash.uniqWith
+  readonly uniqueId: typeof lodash.uniqueId
+  readonly unset: typeof lodash.unset
+  readonly unzip: typeof lodash.unzip
+  readonly unzipWith: typeof lodash.unzipWith
+  readonly update: typeof lodash.update
+  readonly updateWith: typeof lodash.updateWith
+  readonly upperCase: typeof lodash.upperCase
+  readonly upperFirst: typeof lodash.upperFirst
+  readonly values: typeof lodash.values
+  readonly without: typeof lodash.without
+  readonly words: typeof lodash.words
+  readonly xor: typeof lodash.xor
+  readonly xorBy: typeof lodash.xorBy
+  readonly xorWith: typeof lodash.xorWith
+  readonly zip: typeof lodash.zip
+  readonly zipObject: typeof lodash.zipObject
+  readonly zipObjectDeep: typeof lodash.zipObjectDeep
+  readonly zipWith: typeof lodash.zipWith
 }
